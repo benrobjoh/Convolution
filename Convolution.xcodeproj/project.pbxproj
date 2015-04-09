@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59CA4AB81AD6FF7E00D03F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA4AB71AD6FF7E00D03F12 /* AppDelegate.swift */; };
+		59CA4ABA1AD6FF7E00D03F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA4AB91AD6FF7E00D03F12 /* ViewController.swift */; };
+		59CA4ABD1AD6FF7E00D03F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CA4ABB1AD6FF7E00D03F12 /* Main.storyboard */; };
+		59CA4ABF1AD6FF7E00D03F12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59CA4ABE1AD6FF7E00D03F12 /* Images.xcassets */; };
+		59CA4AC21AD6FF7E00D03F12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CA4AC01AD6FF7E00D03F12 /* LaunchScreen.xib */; };
+		59CA4ACE1AD6FF7E00D03F12 /* ConvolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA4ACD1AD6FF7E00D03F12 /* ConvolutionTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59CA4AC81AD6FF7E00D03F12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59CA4AAA1AD6FF7E00D03F12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59CA4AB11AD6FF7E00D03F12;
+			remoteInfo = Convolution;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		59CA4AB21AD6FF7E00D03F12 /* Convolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Convolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59CA4AB61AD6FF7E00D03F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59CA4AB71AD6FF7E00D03F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		59CA4AB91AD6FF7E00D03F12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		59CA4ABC1AD6FF7E00D03F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		59CA4ABE1AD6FF7E00D03F12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		59CA4AC11AD6FF7E00D03F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		59CA4AC71AD6FF7E00D03F12 /* ConvolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConvolutionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59CA4ACC1AD6FF7E00D03F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59CA4ACD1AD6FF7E00D03F12 /* ConvolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvolutionTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59CA4AAF1AD6FF7E00D03F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59CA4AC41AD6FF7E00D03F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59CA4AA91AD6FF7E00D03F12 = {
+			isa = PBXGroup;
+			children = (
+				59CA4AB41AD6FF7E00D03F12 /* Convolution */,
+				59CA4ACA1AD6FF7E00D03F12 /* ConvolutionTests */,
+				59CA4AB31AD6FF7E00D03F12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59CA4AB31AD6FF7E00D03F12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59CA4AB21AD6FF7E00D03F12 /* Convolution.app */,
+				59CA4AC71AD6FF7E00D03F12 /* ConvolutionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59CA4AB41AD6FF7E00D03F12 /* Convolution */ = {
+			isa = PBXGroup;
+			children = (
+				59CA4AB71AD6FF7E00D03F12 /* AppDelegate.swift */,
+				59CA4AB91AD6FF7E00D03F12 /* ViewController.swift */,
+				59CA4ABB1AD6FF7E00D03F12 /* Main.storyboard */,
+				59CA4ABE1AD6FF7E00D03F12 /* Images.xcassets */,
+				59CA4AC01AD6FF7E00D03F12 /* LaunchScreen.xib */,
+				59CA4AB51AD6FF7E00D03F12 /* Supporting Files */,
+			);
+			path = Convolution;
+			sourceTree = "<group>";
+		};
+		59CA4AB51AD6FF7E00D03F12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59CA4AB61AD6FF7E00D03F12 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59CA4ACA1AD6FF7E00D03F12 /* ConvolutionTests */ = {
+			isa = PBXGroup;
+			children = (
+				59CA4ACD1AD6FF7E00D03F12 /* ConvolutionTests.swift */,
+				59CA4ACB1AD6FF7E00D03F12 /* Supporting Files */,
+			);
+			path = ConvolutionTests;
+			sourceTree = "<group>";
+		};
+		59CA4ACB1AD6FF7E00D03F12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59CA4ACC1AD6FF7E00D03F12 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59CA4AB11AD6FF7E00D03F12 /* Convolution */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59CA4AD11AD6FF7E00D03F12 /* Build configuration list for PBXNativeTarget "Convolution" */;
+			buildPhases = (
+				59CA4AAE1AD6FF7E00D03F12 /* Sources */,
+				59CA4AAF1AD6FF7E00D03F12 /* Frameworks */,
+				59CA4AB01AD6FF7E00D03F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Convolution;
+			productName = Convolution;
+			productReference = 59CA4AB21AD6FF7E00D03F12 /* Convolution.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59CA4AC61AD6FF7E00D03F12 /* ConvolutionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59CA4AD41AD6FF7E00D03F12 /* Build configuration list for PBXNativeTarget "ConvolutionTests" */;
+			buildPhases = (
+				59CA4AC31AD6FF7E00D03F12 /* Sources */,
+				59CA4AC41AD6FF7E00D03F12 /* Frameworks */,
+				59CA4AC51AD6FF7E00D03F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59CA4AC91AD6FF7E00D03F12 /* PBXTargetDependency */,
+			);
+			name = ConvolutionTests;
+			productName = ConvolutionTests;
+			productReference = 59CA4AC71AD6FF7E00D03F12 /* ConvolutionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59CA4AAA1AD6FF7E00D03F12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Bixelcog LLC";
+				TargetAttributes = {
+					59CA4AB11AD6FF7E00D03F12 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					59CA4AC61AD6FF7E00D03F12 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 59CA4AB11AD6FF7E00D03F12;
+					};
+				};
+			};
+			buildConfigurationList = 59CA4AAD1AD6FF7E00D03F12 /* Build configuration list for PBXProject "Convolution" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59CA4AA91AD6FF7E00D03F12;
+			productRefGroup = 59CA4AB31AD6FF7E00D03F12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59CA4AB11AD6FF7E00D03F12 /* Convolution */,
+				59CA4AC61AD6FF7E00D03F12 /* ConvolutionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59CA4AB01AD6FF7E00D03F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59CA4ABD1AD6FF7E00D03F12 /* Main.storyboard in Resources */,
+				59CA4AC21AD6FF7E00D03F12 /* LaunchScreen.xib in Resources */,
+				59CA4ABF1AD6FF7E00D03F12 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59CA4AC51AD6FF7E00D03F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59CA4AAE1AD6FF7E00D03F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59CA4ABA1AD6FF7E00D03F12 /* ViewController.swift in Sources */,
+				59CA4AB81AD6FF7E00D03F12 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59CA4AC31AD6FF7E00D03F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59CA4ACE1AD6FF7E00D03F12 /* ConvolutionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59CA4AC91AD6FF7E00D03F12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59CA4AB11AD6FF7E00D03F12 /* Convolution */;
+			targetProxy = 59CA4AC81AD6FF7E00D03F12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		59CA4ABB1AD6FF7E00D03F12 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59CA4ABC1AD6FF7E00D03F12 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		59CA4AC01AD6FF7E00D03F12 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59CA4AC11AD6FF7E00D03F12 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59CA4ACF1AD6FF7E00D03F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59CA4AD01AD6FF7E00D03F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59CA4AD21AD6FF7E00D03F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Convolution/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		59CA4AD31AD6FF7E00D03F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Convolution/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		59CA4AD51AD6FF7E00D03F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ConvolutionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Convolution.app/Convolution";
+			};
+			name = Debug;
+		};
+		59CA4AD61AD6FF7E00D03F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ConvolutionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Convolution.app/Convolution";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59CA4AAD1AD6FF7E00D03F12 /* Build configuration list for PBXProject "Convolution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59CA4ACF1AD6FF7E00D03F12 /* Debug */,
+				59CA4AD01AD6FF7E00D03F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59CA4AD11AD6FF7E00D03F12 /* Build configuration list for PBXNativeTarget "Convolution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59CA4AD21AD6FF7E00D03F12 /* Debug */,
+				59CA4AD31AD6FF7E00D03F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		59CA4AD41AD6FF7E00D03F12 /* Build configuration list for PBXNativeTarget "ConvolutionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59CA4AD51AD6FF7E00D03F12 /* Debug */,
+				59CA4AD61AD6FF7E00D03F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59CA4AAA1AD6FF7E00D03F12 /* Project object */;
+}
