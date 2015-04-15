@@ -5,6 +5,6 @@
       location = "group:Convolution.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Convolution.playground">
+      location = "group:ConvolutionPlayground.playground">
    </FileRef>
 </Workspace>
