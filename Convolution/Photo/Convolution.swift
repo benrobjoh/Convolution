@@ -8,26 +8,29 @@
 
 import UIKit
 
-public struct Convolution {
-    public let image: UIImage
-    public let kernel: [CGFloat]
+struct Convolution {
+    let image: UIImage
+    let filter: Filter
     
     var convolvedImage: UIImage {
         let inputImage = CIImage(image: image)
-        
-        let filter = CIFilter(name: "CIConvolution3X3")
-        filter.setValue(inputImage, forKey: "inputImage")
-        assert(kernel.count == 9)
-        let vector = CIVector(values: normalizedKernel, count: 9)
-        filter.setValue(vector, forKey: "inputWeights")
-        
         let context = CIContext(options: nil)
-        let outputCGImage = context.createCGImage(filter.outputImage, fromRect: inputImage.extent())
+        let outputCGImage = context.createCGImage(filter.filteredImage(inputImage), fromRect: inputImage.extent())
         return UIImage(CGImage: outputCGImage) ?? image
+    }
+}
+
+struct Filter {
+    let kernel: [CGFloat]
+    let grayscale: Bool
+    
+    init(kernel: [CGFloat], grayscale: Bool = false) {
+        self.kernel = kernel
+        self.grayscale = grayscale
     }
     
     var normalizedKernel: [CGFloat] {
-        let sum = kernel.reduce(0, combine: +)
+        let sum = kernel.reduce(0.0, combine: +)
         let normalization: [CGFloat]
         if sum != 0 {
             normalization = kernel.map { $0 / sum }
@@ -36,5 +39,55 @@ public struct Convolution {
             normalization = kernel
         }
         return normalization
+    }
+    
+    var vector: CIVector {
+        return CIVector(values: normalizedKernel, count: kernel.count)
+    }
+    
+    func filteredImage(image: CIImage) -> CIImage {
+        var output = convolutionFilter(forImage: image).outputImage
+        if grayscale {
+            output = grayFilter(forImage: output).outputImage
+        }
+        return output
+    }
+    
+    private func convolutionFilter(forImage image: CIImage) -> CIFilter {
+        let filter = CIFilter(name: "CIConvolution3X3")
+        filter.setValue(image, forKey: "inputImage")
+        assert(kernel.count == 9)
+        let vector = CIVector(values: normalizedKernel, count: 9)
+        filter.setValue(vector, forKey: "inputWeights")
+        return filter
+    }
+    
+    private func grayFilter(forImage image: CIImage) -> CIFilter {
+        let grayFilter = CIFilter(name: "CIColorMonochrome")
+        grayFilter.setValue(image, forKey: "inputImage")
+        grayFilter.setValue(CIColor(CGColor: UIColor.grayColor().CGColor), forKey: "inputColor")
+        return grayFilter
+    }
+}
+
+extension Filter {
+    static var identityFilter: Filter {
+        return Filter(kernel: [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0])
+    }
+    
+    static var edgeFilter: Filter {
+        return Filter(kernel: [1.0, 1.0, 1.0, 1.0, -7.0, 1.0, 1.0, 1.0, 1.0])
+    }
+    
+    static var embossFilter: Filter {
+        return Filter(kernel: [-2.0, -2.0, 0.0, -2.0, 7.0, 0.0, 0.0, 0.0, 0.0], grayscale: true)
+    }
+    
+    static var gaussianFilter: Filter {
+        return Filter(kernel: [1.0, 2.0, 1.0, 2.0, 4.0, 2.0, 1.0, 2.0, 1.0])
+    }
+    
+    static var diamondFilter: Filter {
+        return Filter(kernel: [0.0, -2.0, 0.0, -2.0, 9.0, -2.0, 0.0, -2.0, 0.0])
     }
 }
