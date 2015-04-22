@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mIt-jC-3Il">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mIt-jC-3Il">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -87,9 +87,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bUQ-QA-V2v">
-                        <barButtonItem key="rightBarButtonItem" title="Photos" id="7nz-nR-iIR">
+                        <barButtonItem key="leftBarButtonItem" title="Photos" id="7nz-nR-iIR">
                             <connections>
                                 <action selector="handlePhotoLibraryButtonPressed:" destination="VnB-h4-QCG" id="jzU-Y8-Cez"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wr2-ms-Fpz">
+                            <connections>
+                                <segue destination="7Is-F3-ME4" kind="popoverPresentation" identifier="NewFilterSegue" popoverAnchorBarButtonItem="Wr2-ms-Fpz" id="GUC-2r-NGK">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -309,4 +316,7 @@
             <point key="canvasLocation" x="392" y="913"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GUC-2r-NGK"/>
+    </inferredMetricsTieBreakers>
 </document>

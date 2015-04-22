@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var filters = Filter.standardFilters {
         didSet {
-            collectionViewDelegate?.filters
+            collectionViewDelegate?.filters = filters
             collectionView.reloadData()
         }
     }
@@ -93,6 +93,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         self.imageView.image = self.editedImage
                     }
                 }
+            }
+        }
+        else if segue.identifier == StoryboardSegue.newFilter {
+            let destinationViewController = segue.destinationViewController as? UINavigationController
+            let filterController = destinationViewController?.topViewController as? FilterTableViewController
+            
+            filterController?.filter = Filter.identityFilter
+            filterController?.filterChangeHandler = { [unowned self] in
+                self.filters.append($0)
+                self.appliedFilter = $0
+                self.imageView.image = self.editedImage
             }
         }
     }

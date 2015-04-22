@@ -14,5 +14,6 @@ struct CellReuseIdentifier {
 
 struct StoryboardSegue {
     static let editFilter = "EditFilterSegue"
+    static let newFilter = "NewFilterSegue"
 }
 

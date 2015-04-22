@@ -22,13 +22,19 @@ class FilterTableViewController: UITableViewController {
     @IBOutlet private weak var kernel21: UITextField!
     @IBOutlet private weak var kernel22: UITextField!
     
-    var filter: Filter?
+    var filter: Filter? {
+        didSet {
+            if filter != nil && isViewLoaded() {
+                updateFilterCells()
+            }
+        }
+    }
     
     var filterChangeHandler: (Filter -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         updateFilterCells()
     }
     
