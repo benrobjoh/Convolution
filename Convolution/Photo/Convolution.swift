@@ -20,9 +20,14 @@ struct Convolution {
     }
 }
 
-struct Filter {
-    let kernel: [CGFloat]
-    let grayscale: Bool
+class Filter {
+    var name: String = "Untitled"
+    var kernel: [CGFloat]
+    var grayscale: Bool
+    
+    static var standardFilters: [Filter] {
+        return [Filter.identityFilter, Filter.edgeFilter, Filter.diamondFilter, Filter.embossFilter]
+    }
     
     init(kernel: [CGFloat], grayscale: Bool = false) {
         self.kernel = kernel

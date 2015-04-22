@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591445A51AE8230A0091B01E /* tech-tower.png in Resources */ = {isa = PBXBuildFile; fileRef = 591445A41AE8230A0091B01E /* tech-tower.png */; };
 		59728E2B1ADEB22100A752B4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59728E2A1ADEB22100A752B4 /* Constant.swift */; };
 		59728E2E1ADEB76E00A752B4 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59728E2D1ADEB76E00A752B4 /* FilterCollectionViewCell.swift */; };
 		598B433D1AD72A0900E93FCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598B433C1AD72A0900E93FCA /* ViewController.swift */; };
 		598B43421AD72A7A00E93FCA /* Convolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598B43411AD72A7A00E93FCA /* Convolution.swift */; };
+		59994B6C1AE15CAF00507CF9 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59994B6B1AE15CAF00507CF9 /* FilterTableViewController.swift */; };
+		59994B6E1AE15F9100507CF9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59994B6D1AE15F9100507CF9 /* Extensions.swift */; };
 		59CA4AB81AD6FF7E00D03F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA4AB71AD6FF7E00D03F12 /* AppDelegate.swift */; };
 		59CA4ABD1AD6FF7E00D03F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CA4ABB1AD6FF7E00D03F12 /* Main.storyboard */; };
 		59CA4ABF1AD6FF7E00D03F12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59CA4ABE1AD6FF7E00D03F12 /* Images.xcassets */; };
@@ -29,10 +32,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		591445A41AE8230A0091B01E /* tech-tower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tech-tower.png"; sourceTree = "<group>"; };
 		59728E2A1ADEB22100A752B4 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		59728E2D1ADEB76E00A752B4 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		598B433C1AD72A0900E93FCA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		598B43411AD72A7A00E93FCA /* Convolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convolution.swift; sourceTree = "<group>"; };
+		59994B6B1AE15CAF00507CF9 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
+		59994B6D1AE15F9100507CF9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		59CA4AB21AD6FF7E00D03F12 /* Convolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Convolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CA4AB61AD6FF7E00D03F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59CA4AB71AD6FF7E00D03F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,9 +68,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		591445A31AE8230A0091B01E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				591445A41AE8230A0091B01E /* tech-tower.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		59728E291ADEB20E00A752B4 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				59994B6D1AE15F9100507CF9 /* Extensions.swift */,
 				59728E2A1ADEB22100A752B4 /* Constant.swift */,
 			);
 			path = General;
@@ -81,6 +96,7 @@
 		598B433B1AD72A0900E93FCA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				59994B6B1AE15CAF00507CF9 /* FilterTableViewController.swift */,
 				598B433C1AD72A0900E93FCA /* ViewController.swift */,
 			);
 			path = "View Controllers";
@@ -116,11 +132,11 @@
 			isa = PBXGroup;
 			children = (
 				59CA4AB71AD6FF7E00D03F12 /* AppDelegate.swift */,
+				59728E2C1ADEB75600A752B4 /* Cells */,
+				59728E291ADEB20E00A752B4 /* General */,
 				59CA4ABE1AD6FF7E00D03F12 /* Images.xcassets */,
 				59CA4AC01AD6FF7E00D03F12 /* LaunchScreen.xib */,
 				59CA4ABB1AD6FF7E00D03F12 /* Main.storyboard */,
-				59728E2C1ADEB75600A752B4 /* Cells */,
-				59728E291ADEB20E00A752B4 /* General */,
 				598B433E1AD72A0E00E93FCA /* Photo */,
 				59CA4AB51AD6FF7E00D03F12 /* Supporting Files */,
 				598B433B1AD72A0900E93FCA /* View Controllers */,
@@ -131,6 +147,7 @@
 		59CA4AB51AD6FF7E00D03F12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				591445A31AE8230A0091B01E /* Resources */,
 				59CA4AB61AD6FF7E00D03F12 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -236,6 +253,7 @@
 				59CA4ABD1AD6FF7E00D03F12 /* Main.storyboard in Resources */,
 				59CA4AC21AD6FF7E00D03F12 /* LaunchScreen.xib in Resources */,
 				59CA4ABF1AD6FF7E00D03F12 /* Images.xcassets in Resources */,
+				591445A51AE8230A0091B01E /* tech-tower.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,10 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				59728E2E1ADEB76E00A752B4 /* FilterCollectionViewCell.swift in Sources */,
+				59994B6C1AE15CAF00507CF9 /* FilterTableViewController.swift in Sources */,
 				598B433D1AD72A0900E93FCA /* ViewController.swift in Sources */,
 				59CA4AB81AD6FF7E00D03F12 /* AppDelegate.swift in Sources */,
 				598B43421AD72A7A00E93FCA /* Convolution.swift in Sources */,
 				59728E2B1ADEB22100A752B4 /* Constant.swift in Sources */,
+				59994B6E1AE15F9100507CF9 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

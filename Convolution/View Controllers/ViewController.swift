@@ -14,21 +14,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var collectionViewDelegate: protocol<UICollectionViewDataSource, UICollectionViewDelegate>? {
+    var collectionViewDelegate: FilterCollectionViewDelegate? {
         didSet {
             collectionView.dataSource = collectionViewDelegate
             collectionView.delegate = collectionViewDelegate
         }
     }
     
-    var imageToEdit: UIImage? {
+    var filters = Filter.standardFilters {
         didSet {
+            collectionViewDelegate?.filters
+            collectionView.reloadData()
+        }
+    }
+    
+    var imageToEdit: UIImage = UIImage(named: "tech-tower")! {
+        didSet {
+            collectionViewDelegate?.image = imageToEdit
             imageView.image = editedImage
-            let delegate = imageToEdit.map { FilterCollectionViewDelegate(image: $0) }
-            delegate?.filterSelectedHandler = { [unowned self] in
-                self.appliedFilter = $0
-            }
-            collectionViewDelegate = delegate
             collectionView.reloadData()
         }
     }
@@ -39,23 +42,58 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    var kernel: [CGFloat] = [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0]
-    
     var editedImage: UIImage? {
-        return imageToEdit.map { Convolution(image: $0, filter: appliedFilter).convolvedImage }
+        return Convolution(image: imageToEdit, filter: appliedFilter).convolvedImage
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleFilterLongPressed:")
+        collectionView.addGestureRecognizer(gestureRecognizer)
+        
+        let delegate = FilterCollectionViewDelegate(image: imageToEdit, filters: filters)
+        delegate.filterSelectedHandler = { [unowned self] in
+            self.appliedFilter = $0
+        }
+        collectionViewDelegate = delegate
+        imageView.image = editedImage
     }
 
-    
+    // MARK: User Interaction
     @IBAction func handlePhotoLibraryButtonPressed(sender: UIBarButtonItem) {
         if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func handleFilterLongPressed(sender: UILongPressGestureRecognizer) {
+        if sender.state == .Began {
+            performSegueWithIdentifier(StoryboardSegue.editFilter, sender: sender)
+        }
+    }
+    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == StoryboardSegue.editFilter {
+            if let gesture = sender as? UILongPressGestureRecognizer, gestureView = gesture.view {
+                let destinationViewController = segue.destinationViewController as? UINavigationController
+                let filterController = destinationViewController?.topViewController as? FilterTableViewController
+                
+                let popoverPresentationController = destinationViewController?.popoverPresentationController
+                let location = gesture.locationInView(gestureView)
+                if let indexPath = collectionView.indexPathForItemAtPoint(location), let cell = collectionView.cellForItemAtIndexPath(indexPath) {
+                    popoverPresentationController?.sourceView = gestureView
+                    popoverPresentationController?.sourceRect = cell.frame
+                    
+                    filterController?.filter = collectionViewDelegate?.filters[indexPath.row]
+                    filterController?.filterChangeHandler = { [unowned self] in
+                        self.filters[indexPath.row] = $0
+                        self.imageView.image = self.editedImage
+                    }
+                }
+            }
         }
     }
     
@@ -66,21 +104,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        imageToEdit = image.map { Convolution(image: $0, filter: Filter(kernel: self.kernel)).convolvedImage }
+        imageToEdit = image!
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
 class FilterCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
-    let image: UIImage
-    var filters = [Filter.identityFilter, Filter.edgeFilter, Filter.diamondFilter, Filter.gaussianFilter, Filter.embossFilter]
+    var image: UIImage
     
-    var filterSelectedHandler: ((Filter) -> Void)?
+    var filters: [Filter]
     
-    init(image: UIImage) {
+    init(image: UIImage, filters: [Filter]) {
         self.image = image
+        self.filters = filters
         super.init()
     }
+    
+    var filterSelectedHandler: ((Filter) -> Void)?
     
     // MARK: Protocol - UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -92,7 +132,7 @@ class FilterCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellReuseIdentifier.FilterCellReuseIdentifier.rawValue, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellReuseIdentifier.filterCell, forIndexPath: indexPath) as! UICollectionViewCell
         configureCell(cell, atIndexPath: indexPath)
         return cell
     }

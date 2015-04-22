@@ -8,6 +8,11 @@
 
 import Foundation
 
-enum CellReuseIdentifier: String {
-    case FilterCellReuseIdentifier = "FilterCellReuseIdentifier"
+struct CellReuseIdentifier {
+    static let filterCell = "FilterCellReuseIdentifier"
 }
+
+struct StoryboardSegue {
+    static let editFilter = "EditFilterSegue"
+}
+
