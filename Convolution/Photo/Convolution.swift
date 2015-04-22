@@ -96,4 +96,8 @@ extension Filter {
     static var diamondFilter: Filter {
         return Filter(kernel: [0.0, -2.0, 0.0, -2.0, 9.0, -2.0, 0.0, -2.0, 0.0], name: "Diamond")
     }
+    
+    static var specialFilter: Filter {
+        return Filter(kernel: [-21.0, 0.0, 9.0, 0.0, 1.0, 0.0, 0.0, 0.0, 12.0], name: "My Filter")
+    }
 }
