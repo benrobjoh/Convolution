@@ -10,10 +10,17 @@ import UIKit
 
 class FilterCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var image: UIImage? {
         didSet {
             imageView?.image = image
+        }
+    }
+    
+    var title: String? {
+        didSet {
+            titleLabel?.text = title
         }
     }
 }

@@ -150,7 +150,9 @@ class FilterCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollec
     
     func configureCell(cell: UICollectionViewCell, atIndexPath indexPath: NSIndexPath) {
         if let filterCell = cell as? FilterCollectionViewCell {
-            filterCell.image = Convolution(image: image, filter: filters[indexPath.row]).convolvedImage
+            let filter = filters[indexPath.row]
+            filterCell.image = Convolution(image: image, filter: filter).convolvedImage
+            filterCell.title = filter.name
         }
     }
     

@@ -21,7 +21,7 @@ struct Convolution {
 }
 
 class Filter {
-    var name: String = "Untitled"
+    var name: String
     var kernel: [CGFloat]
     var grayscale: Bool
     
@@ -29,8 +29,9 @@ class Filter {
         return [Filter.identityFilter, Filter.edgeFilter, Filter.diamondFilter, Filter.embossFilter]
     }
     
-    init(kernel: [CGFloat], grayscale: Bool = false) {
+    init(kernel: [CGFloat], name: String = "Untitled", grayscale: Bool = false) {
         self.kernel = kernel
+        self.name = name
         self.grayscale = grayscale
     }
     
@@ -77,22 +78,22 @@ class Filter {
 
 extension Filter {
     static var identityFilter: Filter {
-        return Filter(kernel: [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0])
+        return Filter(kernel: [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0], name: "Identity")
     }
     
     static var edgeFilter: Filter {
-        return Filter(kernel: [1.0, 1.0, 1.0, 1.0, -7.0, 1.0, 1.0, 1.0, 1.0])
+        return Filter(kernel: [1.0, 1.0, 1.0, 1.0, -7.0, 1.0, 1.0, 1.0, 1.0], name: "Edge")
     }
     
     static var embossFilter: Filter {
-        return Filter(kernel: [-2.0, -2.0, 0.0, -2.0, 7.0, 0.0, 0.0, 0.0, 0.0], grayscale: true)
+        return Filter(kernel: [-2.0, -2.0, 0.0, -2.0, 7.0, 0.0, 0.0, 0.0, 0.0], name: "Emboss", grayscale: true)
     }
     
     static var gaussianFilter: Filter {
-        return Filter(kernel: [1.0, 2.0, 1.0, 2.0, 4.0, 2.0, 1.0, 2.0, 1.0])
+        return Filter(kernel: [1.0, 2.0, 1.0, 2.0, 4.0, 2.0, 1.0, 2.0, 1.0], name: "Gaussian")
     }
     
     static var diamondFilter: Filter {
-        return Filter(kernel: [0.0, -2.0, 0.0, -2.0, 9.0, -2.0, 0.0, -2.0, 0.0])
+        return Filter(kernel: [0.0, -2.0, 0.0, -2.0, 9.0, -2.0, 0.0, -2.0, 0.0], name: "Diamond")
     }
 }

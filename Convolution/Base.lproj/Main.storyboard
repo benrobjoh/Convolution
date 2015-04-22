@@ -59,17 +59,28 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2l1-ir-DIJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbM-Xy-Vih">
+                                                    <rect key="frame" x="8" y="130" width="144" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="2l1-ir-DIJ" secondAttribute="bottom" id="8V4-QJ-BvG"/>
+                                            <constraint firstItem="AbM-Xy-Vih" firstAttribute="bottom" secondItem="fzH-s5-jlu" secondAttribute="bottomMargin" id="CrQ-Om-taa"/>
                                             <constraint firstItem="2l1-ir-DIJ" firstAttribute="leading" secondItem="fzH-s5-jlu" secondAttribute="leading" id="Gfy-lL-7T7"/>
                                             <constraint firstItem="2l1-ir-DIJ" firstAttribute="top" secondItem="fzH-s5-jlu" secondAttribute="top" id="RV3-Vy-XTK"/>
+                                            <constraint firstItem="AbM-Xy-Vih" firstAttribute="trailing" secondItem="fzH-s5-jlu" secondAttribute="trailingMargin" id="mfG-Vb-4lc"/>
                                             <constraint firstAttribute="trailing" secondItem="2l1-ir-DIJ" secondAttribute="trailing" id="pZx-xc-Ijr"/>
+                                            <constraint firstItem="AbM-Xy-Vih" firstAttribute="leading" secondItem="fzH-s5-jlu" secondAttribute="leadingMargin" id="t0i-6K-Tdh"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="2l1-ir-DIJ" id="tqS-ga-8zx"/>
+                                            <outlet property="titleLabel" destination="AbM-Xy-Vih" id="wRx-YS-zZ9"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
